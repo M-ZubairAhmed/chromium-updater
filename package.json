@@ -1,6 +1,7 @@
 {
   "name": "chromium-updater",
   "version": "0.1.0",
+<<<<<<< HEAD
   "description": "node utility to download latest chromium package to linux x64 os",
   "main": "index.js",
   "scripts": {
@@ -8,6 +9,11 @@
     "update": "",
     "run": "",
     "auto": "",
+=======
+  "description": "a node utility to download latest chromium package to linux x64 os",
+  "main": "index.js",
+  "scripts": {
+>>>>>>> 32da0621d1b904029f9f9487a41584b0631e44a3
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +25,7 @@
   "bugs": {
     "url": "https://github.com/M-ZubairAhmed/chromium-updater/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/M-ZubairAhmed/chromium-updater#readme",
   "devDependencies": {
     "nodemon": "^1.15.0"
@@ -26,4 +33,7 @@
   "dependencies": {
     "axios": "^0.17.1"
   }
+=======
+  "homepage": "https://github.com/M-ZubairAhmed/chromium-updater#readme"
+>>>>>>> 32da0621d1b904029f9f9487a41584b0631e44a3
 }
