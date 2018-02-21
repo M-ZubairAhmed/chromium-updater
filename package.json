@@ -1,8 +1,7 @@
 {
   "name": "chromium-updater",
   "version": "0.1.0",
-  "description":
-    "node utility to download latest chromium package to linux x64 os",
+  "description": "node utility to download latest chromium package to linux x64 os",
   "main": "index.js",
   "scripts": {
     "start": "./node_modules/.bin/nodemon ./src/index.js",
@@ -22,6 +21,7 @@
     "nodemon": "^1.15.0"
   },
   "dependencies": {
-    "axios": "^0.17.1"
+    "axios": "^0.17.1",
+    "log-update": "^2.3.0"
   }
 }
