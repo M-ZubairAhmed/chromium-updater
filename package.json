@@ -5,7 +5,7 @@
     "node utility to download latest chromium package to linux x64 os",
   "main": "index.js",
   "scripts": {
-    "latest": "node ./src/index.js",
+    "latest": "./node_modules/.bin/nodemon ./src/index.js",
     "update": "",
     "run": "",
     "auto": "",
