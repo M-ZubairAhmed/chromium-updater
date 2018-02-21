@@ -18,6 +18,15 @@ const getInsalledVersionsList = dir =>
     })
   })
 
+exports.verify = (installedVersions, latestVersion) => {
+  if (installedVersions.includes(`${latestVersion}`)) {
+    return { latestVersion, backlogged: 0 }
+  } else {
+    const backlogged = latestVersion - Math.max(...installedVersions)
+    return { latestVersion, backlogged }
+  }
+}
+
 exports.default = (versionsDirectory, latestVersionURL) =>
   Promise.all([
     getInsalledVersionsList(versionsDirectory),
