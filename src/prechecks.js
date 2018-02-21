@@ -18,12 +18,13 @@ const getInsalledVersionsList = dir =>
     })
   })
 
-exports.verify = (installedVersions, latestVersion) => {
-  if (installedVersions.includes(`${latestVersion}`)) {
-    return { latestVersion, backlogged: 0 }
+exports.verify = checkedInfo => {
+  if (checkedInfo.installedVersions.includes(`${checkedInfo.latestVersion}`)) {
+    return { backlogged: 0, ...checkedInfo }
   } else {
-    const backlogged = latestVersion - Math.max(...installedVersions)
-    return { latestVersion, backlogged }
+    const backlogged =
+      checkedInfo.latestVersion - Math.max(...checkedInfo.installedVersions)
+    return { backlogged, ...checkedInfo }
   }
 }
 
@@ -34,4 +35,5 @@ exports.default = (versionsDirectory, latestVersionURL) =>
   ]).then(values => ({
     installedVersions: values[0],
     latestVersion: values[1],
+    directory: versionsDirectory,
   }))
