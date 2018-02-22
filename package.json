@@ -1,8 +1,7 @@
 {
   "name": "chromium-updater",
-  "version": "0.3.3",
-  "description":
-    "node utility to download latest chromium package to linux x64 os",
+  "version": "0.4.0",
+  "description": "node utility to download latest chromium package to linux x64 os",
   "scripts": {
     "start": "node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
