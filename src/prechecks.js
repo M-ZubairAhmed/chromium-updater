@@ -1,31 +1,50 @@
-const axios = require('axios')
+const https = require('https')
 const fs = require('fs')
 
-const getLatestVersion = async url => {
-  try {
-    const response = await axios.get(url)
-    const version = await response.data
-    return version
-  } catch (err) {
-    throw err
-  }
-}
+const getLatestVersion = url =>
+  new Promise((resolve, reject) => {
+    let data = ''
+    https
+      .get(url, res => {
+        if (res.statusCode !== 200) {
+          reject(`Request failed due to response code ${statusCode}`)
+        }
+        res.on('data', chuck => {
+          data += chuck
+        })
+        res.on('end', () => {
+          resolve(data)
+        })
+      })
+      .on('error', err => {
+        reject(err)
+      })
+  })
 
 const getInsalledVersionsList = dir =>
   new Promise((resolve, reject) => {
     fs.readdir(dir, (err, items) => {
+      if (err) {
+        reject(err)
+      }
       resolve(items)
     })
   })
 
 exports.verify = checkedInfo => {
-  if (checkedInfo.installedVersions.includes(`${checkedInfo.latestVersion}`)) {
-    return { backlogged: 0, ...checkedInfo }
+  let backlogged
+  const filterInstalledVersions = checkedInfo.installedVersions.filter(
+    item => !item.includes('.zip'),
+  )
+  if (filterInstalledVersions.includes(`${checkedInfo.latestVersion}`)) {
+    backlogged = 0
   } else {
-    const backlogged =
-      checkedInfo.latestVersion - Math.max(...checkedInfo.installedVersions)
-    return { backlogged, ...checkedInfo }
+    backlogged =
+      checkedInfo.latestVersion - Math.max(...filterInstalledVersions)
   }
+  return Object.assign({}, { backlogged }, checkedInfo, {
+    installedVersions: filterInstalledVersions,
+  })
 }
 
 exports.default = (versionsDirectory, latestVersionURL) =>

@@ -1,24 +1,32 @@
-const axios = require('axios')
-const fs = require('fs')
-const path = require('path')
-
 const precheck = require('./prechecks').default
 const verify = require('./prechecks').verify
-const getLatestCodeURL = require('./utils/urls').getLatestCodeURL
-const download = require('./download').default
+const download = require('./actions').download
+const unzip = require('./actions').unzip
 
 const CH_PATH = '/home/za/coding_projects/personal/chromium-updater/chromium'
-const LATEST_VERSION_URL = require('./utils/urls').LATEST_VERSION_URL
+const LATEST_VERSION_URL = require('./utils').LATEST_VERSION_URL
 
 precheck(CH_PATH, LATEST_VERSION_URL)
-  .then(checkedInfo => verify(checkedInfo))
+  .then(checkedInfo => {
+    console.log('Checking installed Chromium/s in', checkedInfo.directory)
+    return verify(checkedInfo)
+  })
   .then(verifiedInfo => {
     if (verifiedInfo.backlogged !== 0) {
-      console.log('Updating')
-      const LATEST_CODE_URL = getLatestCodeURL(verifiedInfo.latestVersion)
-      download({ codeURL: LATEST_CODE_URL, ...verifiedInfo })
+      console.log(
+        'Your CHROMIUM is outdated by',
+        verifiedInfo.backlogged,
+        'version/s',
+      )
+      console.log('Downloading latest version :', verifiedInfo.latestVersion)
+      return download(verifiedInfo)
     } else {
-      throw new Error('You have the latest version')
+      console.log('You already have latest version')
+      process.exit(0)
     }
+  })
+  .then(downloadedInfo => {
+    console.log('Unzipping downloaded file')
+    unzip(downloadedInfo)
   })
   .catch(err => console.log(err))
