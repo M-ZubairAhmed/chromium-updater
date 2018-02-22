@@ -1,8 +1,8 @@
-const precheck = require('./prechecks').default
-const verify = require('./prechecks').verify
-const download = require('./actions').download
-const unzip = require('./actions').unzip
-const LATEST_VERSION_URL = require('./utils').LATEST_VERSION_URL
+const precheck = require('./src/prechecks').default
+const verify = require('./src/prechecks').verify
+const download = require('./src/actions').download
+const unzip = require('./src/actions').unzip
+const LATEST_VERSION_URL = require('./src/utils').LATEST_VERSION_URL
 
 precheck(__dirname, LATEST_VERSION_URL)
   .then(checkedInfo => {
