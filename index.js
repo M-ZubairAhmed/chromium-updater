@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const precheck = require('./src/prechecks').default
 const verify = require('./src/prechecks').verify
 const download = require('./src/actions').download
