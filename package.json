@@ -1,7 +1,8 @@
 {
   "name": "chromium-updater",
   "version": "0.4.0",
-  "description": "node utility to download latest chromium package to linux x64 os",
+  "description":
+    "node utility to download latest chromium package to linux x64 os",
   "scripts": {
     "start": "node ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/M-ZubairAhmed/chromium-updater#readme",
   "dependencies": {
-    "adm-zip": "^0.4.7"
+    "adm-zip": "^0.4.7",
+    "commander": "^2.14.1"
   }
 }
