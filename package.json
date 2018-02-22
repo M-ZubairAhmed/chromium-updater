@@ -1,12 +1,17 @@
 {
   "name": "chromium-updater",
   "version": "0.1.0",
-  "description": "node utility to download latest chromium package to linux x64 os",
-  "main": "index.js",
+  "description":
+    "node utility to download latest chromium package to linux x64 os",
+  "main": "./src/index.js",
+  "bin": "./src/index.js",
+  "man": "./README.md",
   "scripts": {
     "start": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": { "node": ">=8.9.4" },
+  "os": ["linux"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/M-ZubairAhmed/chromium-updater.git"
