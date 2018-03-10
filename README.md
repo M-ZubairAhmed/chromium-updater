@@ -1,6 +1,6 @@
 <h1 align="center">Chromium Updater</h1>
 <p align="center">
-  <img src="https://i.imgur.com/uLlXjnXt.jpg"/>
+  <img src="https://user-images.githubusercontent.com/17708702/37238469-eca44114-244c-11e8-95d9-d2b9937f1a25.png"/>
 </p>
 <h4 align="center">A simple Chromium updater for Linux x64</h4>
 
