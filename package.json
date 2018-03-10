@@ -1,27 +1,27 @@
 {
-  "name": "chromium-updater",
-  "version": "0.5.1",
-  "description": "node utility to download latest chromium package to linux x64 os",
-  "scripts": {
-    "start": "node ./index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "main": "index.js",
-  "bin": {
-    "chromium-updater": "./index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/M-ZubairAhmed/chromium-updater.git"
-  },
-  "author": "M-ZubairAhmed",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/M-ZubairAhmed/chromium-updater/issues"
-  },
-  "homepage": "https://github.com/M-ZubairAhmed/chromium-updater#readme",
-  "dependencies": {
-    "adm-zip": "^0.4.7",
-    "commander": "^2.14.1"
-  }
+ "name": "chromium-updater",
+ "version": "0.5.1",
+ "description": "node utility to download latest chromium package to linux x64 os",
+ "scripts": {
+  "start": "node ./index.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "main": "index.js",
+ "bin": {
+  "chromium-updater": "./index.js"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/M-ZubairAhmed/chromium-updater.git"
+ },
+ "author": "M-ZubairAhmed",
+ "license": "MIT",
+ "bugs": {
+  "url": "https://github.com/M-ZubairAhmed/chromium-updater/issues"
+ },
+ "homepage": "https://github.com/M-ZubairAhmed/chromium-updater#readme",
+ "dependencies": {
+  "adm-zip": "^0.4.7",
+  "commander": "^2.14.1"
+ }
 }
