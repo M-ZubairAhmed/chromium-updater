@@ -4,6 +4,8 @@
 </p>
 <h4 align="center">A simple Chromium updater for Linux x64</h4>
 
+[![npm version](https://badge.fury.io/js/chromium-updater.svg)](https://badge.fury.io/js/chromium-updater)
+
 ### Intro
 
 A node utility to download and run the latest Linux build of Chromium.
