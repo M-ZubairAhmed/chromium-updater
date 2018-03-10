@@ -4,4 +4,4 @@
 
 * Combined all files into one `index.js` for easy debugging and code clarity.
 
-- Reduced package size from **52.9 KiB** to **a KiB**
+- Reduced package size from **52.9 KiB** to **52.8 KiB**
