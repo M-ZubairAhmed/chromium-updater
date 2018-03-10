@@ -1,6 +1,6 @@
 {
  "name": "chromium-updater",
- "version": "0.6.0",
+ "version": "0.6.1",
  "description": "node utility to download latest chromium package to linux x64 os",
  "scripts": {
   "start": "node ./index.js",
