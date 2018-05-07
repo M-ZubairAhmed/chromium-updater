@@ -14,8 +14,15 @@ It checks it you have the latest installed version if not then updates.
 
 ### Usage
 
+1. Run the package
 ```bash
  npx chromium-updater -d "path/to/download"
+```
+2. Copy path to user settings
+
+3. Run Chromium
+```bash
+./pathToChromiumVersion/chome-linux/chrome --user-settings-data='./path/to/settings' $* &> /dev/null &
 ```
 
 ### Why
