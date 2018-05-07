@@ -4,4 +4,4 @@
 
 * Combined all files into one `index.js` for easy debugging and code clarity.
 
-## [0.6.2](7-05-2018)
+## [0.7.0](7-05-2018)
