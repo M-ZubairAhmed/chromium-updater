@@ -4,6 +4,7 @@ const https = require('https')
 const fs = require('fs')
 const AdmZip = require('adm-zip')
 const program = require('commander')
+const shellCommand = require('child_process').exec
 
 program
  .version(process.env.npm_package_version)
@@ -69,6 +70,7 @@ const unzip = downloadedFile => {
  const zipFile = new AdmZip(downloadedFile.downloadedZipPath)
  const zipEntries = zipFile.getEntries()
  zipFile.extractAllTo(`${downloadedFile.directory}/${downloadedFile.latestVersion}`, true)
+ fs.chmodSync(`${downloadedFile.directory}/${downloadedFile.latestVersion}`, '755')
 }
 
 // Main program
@@ -85,9 +87,6 @@ getInsalledVersionsList(program.dir)
    console.log('! - You already have latest version i.e v', latestVersion.latestVersion)
    process.exit(0)
   }
-  console.log(
-   `- You have ${latestVersion.installedVersions.length} outdated version/s of Chromium installed`,
-  )
   console.log('- Downloading latest version :', latestVersion.latestVersion)
   const latestCodeURL = `https://www.googleapis.com/download/storage/v1/b/chromium-browser-snapshots/o/Linux_x64%2F${
    latestVersion.latestVersion

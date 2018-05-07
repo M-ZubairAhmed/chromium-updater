@@ -4,7 +4,7 @@
  "description": "node utility to download latest chromium package to linux x64 os",
  "scripts": {
   "start": "node ./index.js",
-  "test": "echo \"Error: no test specified\" && exit 1"
+  "start:dev": "node ./index.js -d ~/coding_projects/personal/chromium-updater/chromium/"
  },
  "main": "index.js",
  "bin": {
